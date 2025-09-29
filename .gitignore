@@ -15,3 +15,10 @@ build/
 .env.development.local
 .env.test.local
 .env.production.local
+
+# Large media files
+*.mp4
+*.avi
+*.mov
+*.wmv
+*.flv
