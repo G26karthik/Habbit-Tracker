@@ -1,0 +1,135 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    font-family: 'Inter', system-ui, sans-serif;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-weight: 600;
+    letter-spacing: -0.025em;
+  }
+}
+
+body {
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #fafafa;
+  color: #18181b;
+  line-height: 1.6;
+}
+
+/* Custom animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.fade-in {
+  animation: fadeIn 0.6s ease-out;
+}
+
+.slide-up {
+  animation: slideUp 0.8s ease-out;
+}
+
+/* Custom components */
+@layer components {
+  .btn-primary {
+    @apply bg-primary-900 hover:bg-primary-800 text-white font-medium py-3 px-8 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2 uppercase tracking-wider text-sm;
+  }
+
+  .btn-secondary {
+    @apply bg-white hover:bg-primary-50 text-primary-900 border border-primary-200 font-medium py-3 px-8 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2 uppercase tracking-wider text-sm;
+  }
+
+  .btn-danger {
+    @apply bg-danger-600 hover:bg-danger-700 text-white font-medium py-3 px-8 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-danger-500 focus:ring-offset-2 uppercase tracking-wider text-sm;
+  }
+
+  .input-field {
+    @apply w-full px-4 py-3 border border-primary-200 bg-white focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all duration-300 text-primary-900 placeholder-primary-400;
+  }
+
+  .card {
+    @apply bg-white border border-primary-100 p-8 transition-all duration-300 hover:shadow-lg;
+  }
+
+  .card-dark {
+    @apply bg-primary-900 text-white p-8 transition-all duration-300;
+  }
+
+  .section-padding {
+    @apply py-16 px-4 sm:px-6 lg:px-8;
+  }
+
+  .container-width {
+    @apply max-w-7xl mx-auto;
+  }
+
+  /* Habit status styles */
+  .habit-done {
+    @apply bg-success-600 text-white border-success-600 hover:bg-success-700 hover:border-success-700;
+  }
+
+  .habit-missed {
+    @apply bg-danger-600 text-white border-danger-600 hover:bg-danger-700 hover:border-danger-700;
+  }
+
+  .habit-empty {
+    @apply bg-white text-primary-400 border border-primary-200 hover:bg-primary-50 hover:border-primary-300;
+  }
+
+  /* Typography styles */
+  .heading-xl {
+    @apply font-serif text-5xl lg:text-6xl font-semibold text-primary-900 leading-tight;
+  }
+
+  .heading-lg {
+    @apply font-serif text-3xl lg:text-4xl font-semibold text-primary-900 leading-tight;
+  }
+
+  .heading-md {
+    @apply font-serif text-2xl lg:text-3xl font-semibold text-primary-900 leading-tight;
+  }
+
+  .heading-sm {
+    @apply font-serif text-xl lg:text-2xl font-medium text-primary-900 leading-tight;
+  }
+
+  .body-lg {
+    @apply text-lg text-primary-700 leading-relaxed;
+  }
+
+  .body-base {
+    @apply text-base text-primary-600 leading-relaxed;
+  }
+
+  .label-text {
+    @apply text-sm font-medium text-primary-800 uppercase tracking-wider;
+  }
+}
+
+/* Project grid styles inspired by Run For The Hills */
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: 2rem;
+}
+
+@media (max-width: 768px) {
+  .project-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+}

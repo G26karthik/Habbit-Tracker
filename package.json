@@ -1,0 +1,19 @@
+{
+  "name": "habit-tracker-fullstack",
+  "version": "1.0.0",
+  "description": "Full-Stack Mini Habit Tracker App",
+  "scripts": {
+    "install-all": "cd backend && npm install && cd ../frontend && npm install",
+    "dev": "concurrently \"npm run backend\" \"npm run frontend\"",
+    "backend": "cd backend && npm run dev",
+    "frontend": "cd frontend && npm start",
+    "build": "cd frontend && npm run build",
+    "demo-data": "cd backend && npm run populate-demo"
+  },
+  "keywords": ["habit", "tracker", "react", "express", "sqlite"],
+  "author": "Intern Candidate",
+  "license": "MIT",
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  }
+}
